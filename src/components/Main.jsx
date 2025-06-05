@@ -15,7 +15,6 @@ export default function Main(){
                 const { original_language, original_title, title, vote_average} = character;
                 return { original_language, original_title, title, vote_average};
             });
-
             setCharacters(normalizedcharacters);
         });
     }
