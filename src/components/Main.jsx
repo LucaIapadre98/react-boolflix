@@ -6,7 +6,7 @@ export default function Main(){
     const apiUrl="https://api.themoviedb.org/3"
     const apiKey= "63f98dc4b840e55db5609ed318833f2b";
     const query="Harry";
-
+    
     const fetchCharacters = () => {
         axios.get(`${apiUrl}/search/movie?api_key=${apiKey}&query=${query}`).then((res)=>{
             const{ results } = res.data;
