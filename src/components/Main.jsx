@@ -11,7 +11,6 @@ export default function Main(){
     const queryString = new URLSearchParams(apiParams).toString();
     console.log(queryString);
     
-
     useEffect(() =>{
         axios.get(`${apiUrl}/search/movie?${queryString}`)
     })
