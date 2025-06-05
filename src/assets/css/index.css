@@ -5,3 +5,10 @@
     padding: 20px;
     color: red;
 }
+.container-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 20px;
+
+}

@@ -3,11 +3,14 @@ import { useEffect, useState } from "react";
 
 export default function Main(){
     const [characters, setCharacters] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
     const apiUrl="https://api.themoviedb.org/3"
     const apiKey= "63f98dc4b840e55db5609ed318833f2b";
-    const query="Harry";
-    
+    const query="movie";
+
     const fetchCharacters = () => {
+        setIsLoading(true);
         axios.get(`${apiUrl}/search/movie?api_key=${apiKey}&query=${query}`).then((res)=>{
             const{ results } = res.data;
 
@@ -24,8 +27,12 @@ export default function Main(){
         <>
             <div className="container-form">
                 <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-success" type="submit">Button</button>
+                    <input className="form-control me-2" type="text"/>
+                    <button 
+                        className="btn btn-primary" 
+                        type="submit"
+                    >
+                    Click</button>
                 </form>
             </div>
             <div className="container-card">
@@ -34,7 +41,7 @@ export default function Main(){
                         {characters.map((character) =>(
                             <>
                                 <div className="card-header" key={character.id}>
-                                    <h3>{character.title}</h3>
+                                    <h4>{character.title}</h4>
                                     <h6>{character.original_title}</h6>
                                 </div>
                                 <div className="card-body">
@@ -43,7 +50,6 @@ export default function Main(){
                                 </div>
                             </>
                         ))}
-                        
                     </div>
                 ) : (
                     <h3>Loading...</h3>
