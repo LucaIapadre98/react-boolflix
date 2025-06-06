@@ -1,7 +1,10 @@
 export default function Header(){
     return (
-        <div className="title">
-            <h1>BoolFlix</h1>
-        </div>
+        <header>
+            <form onSubmit={onSearchSubmit}>
+                <input type="text" value={searched} onChange={handleInputChange}></input>
+                <button>Clicca</button>
+            </form>
+        </header>
     )
 }

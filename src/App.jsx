@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
+import { SearchProvider } from "./contents/Content";
+import Header from "./components/Header";
 
 const apiUrl="https://api.themoviedb.org/3"
 const apiKey= "63f98dc4b840e55db5609ed318833f2b";
@@ -15,6 +17,7 @@ export default function App(){
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
+
     const search = {
       api_key: apiKey,
       query: searched,
@@ -35,16 +38,11 @@ export default function App(){
     });
   }
   return (
-    <div>
-      <header>
-        <form onSubmit={onSearchSubmit}>
-          <input type="text" value={searched} onChange={handleInputChange}></input>
-          <button>Clicca</button>
-        </form>
-      </header>
+    <SearchProvider>
+      <Header />
       <main>
         {movies.map((movie) => (
-          <div className="card">
+          <div className="card" key={movie.id}>
             <div className="card-header">
               <h4>Title: {movie.title}</h4>
               <h6>Titolo originale: {movie.originalTitle}</h6>
@@ -56,6 +54,8 @@ export default function App(){
           </div>
         ))}
       </main>
-    </div>
+    </SearchProvider>
+    
+
   )
 }
