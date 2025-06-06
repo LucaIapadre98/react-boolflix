@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-const content = createContext();
+const Context = createContext();
 
 const apiUrl="https://api.themoviedb.org/3"
 const apiKey= "63f98dc4b840e55db5609ed318833f2b";
@@ -36,14 +36,14 @@ const SearchProvider = ({children}) => {
 
     };
     return (
-        <Content.Provider value={searchValues}>
+        <Context.Provider value={searchValues}>
             {children}
-        </Content.Provider>
+        </Context.Provider>
     );
 };
 
 const useSearch = () => {
-    return useContext(content);
+    return useContext(Context);
 };
 
-export { searchProvider, useSearch };
+export { SearchProvider, useSearch };
