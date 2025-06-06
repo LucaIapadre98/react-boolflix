@@ -7,7 +7,7 @@ export default function ProductionCard ({ movie }){
             </div>
             <div className="card-body">
                 <p>Lingua: {movie.language}</p>
-                <img src={movie.languageFlag} />
+                <p>Bandiera: <img src={movie.languageFlag} /></p>
                 <p>Voto: {movie.rating}</p>
             </div>
         </div>

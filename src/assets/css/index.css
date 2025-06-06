@@ -4,13 +4,13 @@
     align-items: center;
     padding: 20px;
     color: red;
+    font-size: 70px;
+    font-weight: bold;
 }
-.container-card {
+form{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-top: 20px;
-
+    justify-content: center;
+    padding-bottom: 30px;
 }
 .card .card-header{
     padding: 5px 5px;
@@ -20,4 +20,14 @@
 }
 .card .card-body p{
     margin: 5px;
+}
+.card-body img{
+    width: 25px;
+    height: 25px;
+}
+button{
+    margin-left: 2px;
+}
+input{
+    width: 20%;
 }
