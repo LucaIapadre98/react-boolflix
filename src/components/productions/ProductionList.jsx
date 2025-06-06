@@ -6,7 +6,7 @@ export default function ProductionList () {
 
     return(
         <section>
-            {movies.map((movie) => ( <ProductionCard key={movie.id} movie={movie}/>))}
+            {movies.map((movie) => ( <ProductionCard key={movie.id} movie={movie}/> ))}
         </section>
     )
 }
