@@ -1,4 +1,4 @@
-import ProductionList from "./productions/PorductionList";
+import ProductionList from "./productions/ProductionList";
 
 export default function Main (){
     return (
