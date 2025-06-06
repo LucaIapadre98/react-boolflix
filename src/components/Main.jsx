@@ -32,7 +32,7 @@ export default function Main(){
                         className="btn btn-primary" 
                         type="submit"
                     >
-                    Click</button>
+                    Search</button>
                 </form>
             </div>
             <div className="container-card">
@@ -41,12 +41,12 @@ export default function Main(){
                         {characters.map((character) =>(
                             <>
                                 <div className="card-header" key={character.id}>
-                                    <h4>{character.title}</h4>
-                                    <h6>{character.original_title}</h6>
+                                    <h4>Titolo: {character.title}</h4>
+                                    <h6>Titolo originale: {character.original_title}</h6>
                                 </div>
                                 <div className="card-body">
-                                    <span>{character.original_language}</span>
-                                    <p>{character.vote_average}</p>
+                                    <span>Lingua: {character.original_language}</span>
+                                    <p>Voto: {character.vote_average}</p>
                                 </div>
                             </>
                         ))}
